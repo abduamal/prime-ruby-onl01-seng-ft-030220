@@ -1,8 +1,11 @@
-def prime?(num)
-  n = 2 
-  while n < num
-    return false if num % n == 0
-    n += 1
+def prime?(number)
+  start = 2
+  if number > 1
+    range = (start..number-1).to_a
+    range.none? do |num|
+      number % num == 0
+    end
+  else
+    false
   end
-  true
 end
